@@ -1892,17 +1892,6 @@ enum USBEndpointNumber_Out
 #endif
 
 /**
- * @brief Enable Vendor specific control interface to enumerate as WinUSB on Windows
- *
- * Allow the Vendor specific control interface, if enabled (XUA_USB_CONTROL_DESCS defined to 1), to enumerate as WinUSB on Windows.
- * Default: Enabled by default. If disabled, manual driver installation for the control interface would
- * be required on Windows
- */
-#ifndef ENUMERATE_CONTROL_INTF_AS_WINUSB
-#define ENUMERATE_CONTROL_INTF_AS_WINUSB    1
-#endif
-
-/**
  * @brief Macro specifying if an mclk input and a second mclk input are required
  */
 #define _NEED_MCLK_FOR_I2S \

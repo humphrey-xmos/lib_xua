@@ -20,7 +20,7 @@
 // Enumerating with 0 capabilities doesn't seem to be allowed
 #if XUA_DFU_EN
     #define _XUA_ENABLE_BOS_DESC (1)
-#elif (XUA_USB_CONTROL_DESCS && ENUMERATE_CONTROL_INTF_AS_WINUSB)
+#elif (XUA_USB_CONTROL_DESCS && ZZZZ)
     #define _XUA_ENABLE_BOS_DESC (1)
 #else
     #define _XUA_ENABLE_BOS_DESC (0)
@@ -35,7 +35,7 @@
 #include "dfu_types.h"
 #include "usbaudio20.h"          /* Defines from USB Audio 2.0 spec */
 #include "xua_ep0_descriptors.h" /* This devices descriptors */
-#include "xua_ep0_msos_descriptors.h" /* Composite MSOS descriptors */
+#include "composite_ep0_msos_descriptors.h" /* Composite MSOS descriptors */
 #include "xua_commands.h"
 #include "audiostream.h"
 #include "hostactive.h"
@@ -470,7 +470,7 @@ void XUA_Endpoint0_init(chanend c_ep0_out, chanend c_ep0_in, NULLABLE_RESOURCE(c
 
     VendorRequests_Init(VENDOR_REQUESTS_PARAMS);
 #if _XUA_ENABLE_BOS_DESC
-    Xua_Init_Ep0_Msos_Descriptors();
+    XUD_Init_Composite_Ep0_Msos_Descriptors();
 #endif
 
     if(strcmp(g_strTable.serialStr, ""))
@@ -893,7 +893,7 @@ void XUA_Endpoint0_loop(XUD_Result_t result, USB_SetupPacket_t sp, chanend c_ep0
                     }
                     else {
                         // Use composite MSOS descriptor
-                        result = Xua_GetMsosDescriptor(ep0_out, ep0_in, &sp);
+                        result = XUD_GetCompositeMsosDescriptor(ep0_out, ep0_in, &sp);
                     }
                 }
             }
@@ -950,7 +950,7 @@ void XUA_Endpoint0_loop(XUD_Result_t result, USB_SetupPacket_t sp, chanend c_ep0
                                     }
                                     else {
                                         // Use composite MSOS descriptor
-                                        result = Xua_GetBosDescriptor(ep0_out, ep0_in, &sp);
+                                        result = XUD_GetCompositeBosDescriptor(ep0_out, ep0_in, &sp);
                                     }
                                 }
                                 break;

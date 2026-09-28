@@ -53,7 +53,7 @@ set(APP_COMPILER_FLAGS_control_not_winusb ${COMMON_FLAGS}
                            -DI2S_CHANS_ADC=8
                            -DI2S_CHANS_DAC=8
                            -DXUA_USB_CONTROL_DESCS=1
-                           -DENUMERATE_CONTROL_INTF_AS_WINUSB=0)
+                           -DXUD_ENUMERATE_CONTROL_INTF_AS_WINUSB=0)
 
 set(APP_COMPILER_FLAGS_i0o2_lp  ${COMMON_FLAGS}
                                 -DBCD_DEVICE=0x0103

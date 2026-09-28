@@ -4,8 +4,10 @@ lib_xua change log
 UNRELEASED
 ---------
 
-  * FIXED:     dsdMode is not reset after switching playback from Native DSD back to PCM
-  * CHANGED:   Improve documentation for audio clock and port configuration
+  * FIXED:    dsdMode is not reset after switching playback from Native DSD back to PCM
+  * CHANGED:  Improve documentation for audio clock and port configuration
+  * CHANGED:  Moved composite BOS and MSOS2 descriptors to ``lib_xud``.
+    ENUMERATE_CONTROL_INTF_AS_WINUSB moved to ``lib_xud``.
 
 5.5.0
 -----
