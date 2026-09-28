@@ -885,15 +885,7 @@ void XUA_Endpoint0_loop(XUD_Result_t result, USB_SetupPacket_t sp, chanend c_ep0
                         num_interfaces = NUM_INTERFACES_A1;
                         #endif
                     }
-
-                    if (num_interfaces == 1) {
-                        // Use simple MSOS descriptor
-                        result = XUD_GetMsosDescriptor(ep0_out, ep0_in, &sp);
-                    }
-                    else {
-                        // Use composite MSOS descriptor
-                        result = XUD_GetCompositeMsosDescriptor(ep0_out, ep0_in, &sp);
-                    }
+                    result = XUD_GetMsosDescriptor(num_interfaces, ep0_out, ep0_in, &sp);
                 }
             }
 
@@ -942,15 +934,7 @@ void XUA_Endpoint0_loop(XUD_Result_t result, USB_SetupPacket_t sp, chanend c_ep0
                                         num_interfaces = NUM_INTERFACES_A1;
                                         #endif
                                     }
-
-                                    if(num_interfaces == 1) {
-                                        // Use simple MSOS descriptor
-                                    result = XUD_GetBosDescriptor(ep0_out, ep0_in, &sp);
-                                }
-                                    else {
-                                        // Use composite MSOS descriptor
-                                        result = XUD_GetCompositeBosDescriptor(ep0_out, ep0_in, &sp);
-                                    }
+                                    result = XUD_GetBosDescriptor(num_interfaces, ep0_out, ep0_in, &sp);
                                 }
                                 break;
                             }
