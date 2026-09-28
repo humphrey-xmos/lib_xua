@@ -3,6 +3,7 @@
 
 #ifndef _XUD_CONF_H_
 #define _XUD_CONF_H_
+#ifndef __ASSEMBLER__
 
 #include "xua_conf_full.h"
 #include "packet_sizes.h"
@@ -56,4 +57,5 @@
 #endif // #if (MAX_HS_STREAM_PACKETSIZE > (XUD_USB_ISO_MAX_TXNS_PER_MICROFRAME * 1024))
 #endif // #if (XUD_USB_ISO_MAX_TXNS_PER_MICROFRAME > 1)
 
+#endif // #ifndef __ASSEMBLER__
 #endif // #ifndef _XUD_CONF_H_
