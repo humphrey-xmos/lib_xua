@@ -44,8 +44,8 @@ set(LIB_DEPENDENT_MODULES "lib_adat(2.0.1)"
                           "lib_sw_pll(2.4.1)"
                           "lib_xassert(4.3.2)"
                           "lib_mic_array(7.0.0)"
-                          "humphrey-xmos/lib_xud(composite-desc)"
-                          "humphrey-xmos/lib_dfu(usb-defines)")
+                          "humphrey-xmos/lib_xud(feature/composite-desc)"
+                          "humphrey-xmos/lib_dfu(feature/usb-defines)")
 
 set(LIB_COMPILER_FLAGS -O3
                        -fasm-linenum
