@@ -5,9 +5,9 @@
 #define _DESCRIPTOR_DEFS_H_
 
 /*
-    Include xua.h to pick up the #defines of NUM_USB_CHAN_IN and NUM_USB_CHAN_OUT.
+    Include xua_conf_full.h to pick up the #defines of XUA_USER_INTERFACES, NUM_USB_CHAN_IN and NUM_USB_CHAN_OUT.
  */
-#include "xua.h"
+#include "xua_conf_full.h"
 
 #if (NUM_USB_CHAN_IN > 0) && (NUM_USB_CHAN_OUT > 0)
 #define AUDIO_INTERFACE_COUNT (3)
