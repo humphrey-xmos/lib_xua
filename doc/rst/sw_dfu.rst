@@ -91,7 +91,7 @@ The MSOS descriptors report the compatible ID as *WINUSB* which enables Windows 
 function driver without a custom INF file. This means that when the device is connected, the DFU interface
 shows up as WinUSB compatible automatically, without requiring the user to manually load a driver for it using a utility like Zadig.
 
-The MSOS descriptors are present in ``lib_xud`` in the file ``simple_ep0_msos_descriptors.c``.
+The MSOS descriptors are present in ``lib_xud`` in the file ``xud_ep0_msos_descriptors.c``.
 In order to enumerate as a device capable of supplying MSOS descriptors, the device's ``bcdUSB`` version in the device descriptor has to be **0x0201**.
 On seeing the ``bcdUSB`` version as 0x0201 when the device enumerates, the host requests for a descriptor called the Binary Device Object Store (BOS) descriptor.
 This descriptor contains information about the capability of the device. It specifies the device to be MSOS 2.0 capable and contains information about

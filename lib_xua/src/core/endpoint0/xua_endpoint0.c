@@ -30,7 +30,7 @@
 #if XUA_USB_EN
 #include "msos_descriptors.h"
 #include "msos_helpers.h"
-#include "simple_ep0_msos_descriptors.h"
+#include "xud_ep0_msos_descriptors.h"
 #include "xud_device.h"          /* Standard descriptor requests */
 #include "dfu_types.h"
 #include "usbaudio20.h"          /* Defines from USB Audio 2.0 spec */
